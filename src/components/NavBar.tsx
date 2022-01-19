@@ -1,24 +1,27 @@
 import React from 'react';
-import Navbar from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 import {NavLink} from "react-router-dom";
-import { SHOP_ROUTE } from '../utils/consts';
+import {CATEGORY_ROUTE, SHOP_ROUTE} from '../utils/consts';
+
 
 const NavBar = () => {
 
     return (
+        <div className="navbar navbar-dark bg-dark">
+            <NavLink className="navbar-brand" to={SHOP_ROUTE}> ElectroShop</NavLink>
 
-        <Navbar bg="dark" variant="dark">
-            <Container>
-                <NavLink to={SHOP_ROUTE}> ElectroShop</NavLink>
-                <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
-                </Nav>
-            </Container>
-        </Navbar>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                    <NavLink className="nav-link active" to={CATEGORY_ROUTE+'/0'}> Холодиьники</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link active" to={CATEGORY_ROUTE+'/1'}> Телевизоры</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link active" to={CATEGORY_ROUTE+'/2'}> Мясорубки</NavLink>
+                </li>
+            </ul>
+        </div>
+
 
 
     );
