@@ -18,12 +18,11 @@ const DeviceList : React.FC = () => {
     if (error){
         return <h1>{error}</h1>
     }
-    console.log(devices);
 
     return (
         <div className="main-list">
             {devices.map(device=> {
-               return <div className="main-item">
+               return <div key={device.id} className="main-item">
                    <a href={DEVICE_ROUTE + '/' + device.id}>
                        <div className="item-grid">
                            <div>
@@ -31,7 +30,7 @@ const DeviceList : React.FC = () => {
                            </div>
                            <div className="item-text">
                            <h4>{device.name}</h4>
-                           <p>{`Цена: ${device.price}У.Е.`}</p>
+                           <p>{`Цена: ${device.price} У.Е.`}</p>
                            </div>
                        </div>
                        </a>

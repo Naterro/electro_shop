@@ -8,12 +8,16 @@
   display: flex;
   flex-direction: column;
   .main-item{
+
     border: 1px solid black;
+    a{
+      text-decoration: none;
+    }
     .item-grid{
       display: flex;
       .item-text{
+        color: black;
         padding-top: 20px;
-          text-decoration: none;
       }
     }
   }
