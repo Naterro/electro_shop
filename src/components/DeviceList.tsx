@@ -11,7 +11,7 @@ const DeviceList : React.FC = () => {
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(fetchDevices());
-    }, [])
+    }, [dispatch])
     if (loading){
         return <h1>Loading</h1>
     }
@@ -19,6 +19,15 @@ const DeviceList : React.FC = () => {
         return <h1>{error}</h1>
     }
 
+    devices.sort((a:any,b:any):number=>{
+        if (a.date_receipt > b.date_receipt) {
+            return 1;
+        }
+        if (a.date_receipt < b.date_receipt) {
+            return -1;
+        }
+        return 0;
+    });
     return (
         <div className="main-list">
             {devices.map(device=> {
