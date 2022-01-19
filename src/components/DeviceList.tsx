@@ -7,7 +7,7 @@ import {Image} from "react-bootstrap";
 
 const DeviceList : React.FC = () => {
     //const state = useTypedSelector(state=> state.device)
-    const {devices,error,loading} = useTypedSelector(state=> state.device)
+    const {devices,error,loading} = useTypedSelector(state=> state.devices)
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(fetchDevices());
@@ -18,7 +18,7 @@ const DeviceList : React.FC = () => {
     if (error){
         return <h1>{error}</h1>
     }
-
+    console.log(devices)
     devices.sort((a:any,b:any):number=>{
         if (a.date_receipt > b.date_receipt) {
             return 1;

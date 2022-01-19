@@ -1,8 +1,9 @@
 import {combineReducers} from "redux";
-import {deviceReducer} from "./deviceReducer";
+import {deviceReducer, devicesReducer} from "./deviceReducer";
 
 export const rootReducer = combineReducers({
-    device: deviceReducer,
+    devices: devicesReducer,
+    device:deviceReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>;
