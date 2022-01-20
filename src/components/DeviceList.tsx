@@ -6,7 +6,7 @@ import {DEVICE_ROUTE} from "../utils/consts";
 import {Image} from "react-bootstrap";
 
 const DeviceList : React.FC = ({children, ...props}) => {
-    const {devices,error,loading} = useTypedSelector(state=> state.devices)
+    let {devices,error,loading} = useTypedSelector(state=> state.devices)
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(fetchDevices());
@@ -19,6 +19,9 @@ const DeviceList : React.FC = ({children, ...props}) => {
     }
     console.log(children)
     console.log(devices)
+    if (children){
+        devices = devices.filter( device=>device.category == children)
+    }
     devices.sort((a:any,b:any):number=>{
         if (a.date_receipt > b.date_receipt) {
             return 1;
@@ -28,40 +31,29 @@ const DeviceList : React.FC = ({children, ...props}) => {
         }
         return 0;
     });
+
     return (
-        <div className="main-list">
-            {devices.map(device=> {
-                if(children)if(device.category==children) {
-                    return <div key={device.id} className="main-item">
-                        <a href={DEVICE_ROUTE + '/' + device.id}>
-                            <div className="item-grid">
-                                <div>
-                                    <Image width={300} height={300}/>
+        <div>
+            <div>
+
+            </div>
+            <div className="main-list">
+                {devices.map(device=> {
+                        return <div key={device.id} className="main-item">
+                            <a href={DEVICE_ROUTE + '/' + device.id}>
+                                <div className="item-grid">
+                                    <div>
+                                        <Image width={300} height={300}/>
+                                    </div>
+                                    <div className="item-text">
+                                        <h4>{device.name}</h4>
+                                        <p>{`Цена: ${device.price} У.Е.`}</p>
+                                    </div>
                                 </div>
-                                <div className="item-text">
-                                    <h4>{device.name}</h4>
-                                    <p>{`Цена: ${device.price} У.Е.`}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                }
-                if (!children) {
-                    return <div key={device.id} className="main-item">
-                        <a href={DEVICE_ROUTE + '/' + device.id}>
-                            <div className="item-grid">
-                                <div>
-                                    <Image width={300} height={300}/>
-                                </div>
-                                <div className="item-text">
-                                    <h4>{device.name}</h4>
-                                    <p>{`Цена: ${device.price} У.Е.`}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                }
-            })}
+                            </a>
+                        </div>
+                    })}
+            </div>
         </div>
     );
 }
