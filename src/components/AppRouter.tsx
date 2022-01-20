@@ -11,9 +11,10 @@ import Shop from "../pages/Shop";
 Вместо него использовать просто: "<Route path="*" element=(<Shop/>)/>".
 Может у кого-то возникла такая же проблема и будет полезно.
 */
+export const isAuth = true;
 const AppRouter = () => {
 
-    const isAuth = true;
+
     return (
           <Routes>
               {isAuth && authRoutes.map(({path, Component}) =>

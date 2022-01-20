@@ -5,7 +5,7 @@ import {fetchDevices} from "../store/action-creators/device";
 import {DEVICE_ROUTE} from "../utils/consts";
 import {Image} from "react-bootstrap";
 
-const DeviceList : React.FC = () => {
+const DeviceList : React.FC = ({children, ...props}) => {
     //const state = useTypedSelector(state=> state.device)
     const {devices,error,loading} = useTypedSelector(state=> state.devices)
     const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const DeviceList : React.FC = () => {
     if (error){
         return <h1>{error}</h1>
     }
+    console.log(children)
     console.log(devices)
     devices.sort((a:any,b:any):number=>{
         if (a.date_receipt > b.date_receipt) {

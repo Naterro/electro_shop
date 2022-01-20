@@ -4,7 +4,7 @@ import DeviceList from "../components/DeviceList";
 const Shop = () => {
     return (
         <div>
-            <DeviceList></DeviceList>
+            <DeviceList children={null}/>
         </div>
     );
 };

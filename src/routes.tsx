@@ -1,5 +1,6 @@
 import Admin from "./pages/Admin";
 import {
+    ADD_ROUTE,
     ADMIN_ROUTE,
     BASKET_ROUTE,
     CATEGORY_ROUTE,
@@ -13,6 +14,7 @@ import Shop from "./pages/Shop";
 import Auth from "./pages/Auth";
 import DevicePage from "./pages/DevicePage";
 import Category from "./pages/Category";
+import Add from "./pages/Add";
 
 export const authRoutes = [
     {
@@ -22,6 +24,10 @@ export const authRoutes = [
     {
         path: BASKET_ROUTE,
         Component:<Basket/>
+    },
+    {
+        path: ADD_ROUTE,
+        Component:<Add/>
     }
 ]
 
