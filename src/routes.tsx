@@ -43,7 +43,7 @@ export const publicRoutes = [
         Component:<DevicePage/>
     },
     {
-        path: CATEGORY_ROUTE + '/:id',
+        path: CATEGORY_ROUTE + '/:category',
         Component:<Category/>
     }
 ]

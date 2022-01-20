@@ -11,13 +11,13 @@ const NavBar = () => {
 
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                    <NavLink className="nav-link active" to={CATEGORY_ROUTE+'/0'}> Холодиьники</NavLink>
+                    <NavLink className="nav-link active" to={CATEGORY_ROUTE+'/freezer'}> Холодиьники</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link active" to={CATEGORY_ROUTE+'/1'}> Телевизоры</NavLink>
+                    <NavLink className="nav-link active" to={CATEGORY_ROUTE+'/TV'}> Телевизоры</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link active" to={CATEGORY_ROUTE+'/2'}> Мясорубки</NavLink>
+                    <NavLink className="nav-link active" to={CATEGORY_ROUTE+'/grinder'}> Мясорубки</NavLink>
                 </li>
             </ul>
         </div>

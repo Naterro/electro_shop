@@ -11,7 +11,6 @@ import Shop from "../pages/Shop";
 Вместо него использовать просто: "<Route path="*" element=(<Shop/>)/>".
 Может у кого-то возникла такая же проблема и будет полезно.
 */
-//TODO fix routing
 const AppRouter = () => {
 
     const isAuth = true;
