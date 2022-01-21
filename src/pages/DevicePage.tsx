@@ -22,17 +22,14 @@ const DevicePage = () => {
     }
     console.log(device);
 
-
-    
-
-
     return (
         <div>
             <Image width={400} height={300} />
-           <h3>{device.name}</h3>
-            Цена - {device.price}
-            DEVICE - {id}
-
+            <div>  <h3>{device.name}</h3></div>
+            <div>Цена - {device.price}</div>
+            <div>Производитель - {device.brand}</div>
+            <div>Описание:</div>
+            <div>{device.desc}</div>
         </div>
     );
 };
